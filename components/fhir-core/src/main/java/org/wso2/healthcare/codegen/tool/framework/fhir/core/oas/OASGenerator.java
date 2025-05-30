@@ -39,7 +39,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.healthcare.codegen.tool.framework.fhir.core.FHIRTool;
 import org.wso2.healthcare.codegen.tool.framework.fhir.core.oas.model.APIDefinition;
-import org.wso2.healthcare.codegen.tool.framework.fhir.core.versions.r4.oas.R4OASGenUtils;
+import org.wso2.healthcare.codegen.tool.framework.fhir.core.oas.OASGenUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -149,7 +149,7 @@ public class OASGenerator {
                     MediaType mediaType = new MediaType();
                     Schema schema = new Schema();
                     schema.$ref(APIDefinitionConstants.OAS_REF_SCHEMAS + apiDefinition.getResourceType());
-                    operation.addParametersItem(R4OASGenUtils.generateParameter(
+                    operation.addParametersItem(OASGenUtils.generateParameter(
                             "id", "logical identifier", "string", "path", true));
                     mediaType.setSchema(schema);
                     successContent.addMediaType(APIDefinitionConstants.CONTENT_TYPE_FHIR_JSON, mediaType);
@@ -215,7 +215,7 @@ public class OASGenerator {
                             interaction.getKey() + " " + apiDefinition.getResourceType() + " operation successful");
                     putResponses.addApiResponse("200", updateSuccessResponse);
                     operation.setResponses(putResponses);
-                    operation.addParametersItem(R4OASGenUtils.generateParameter(
+                    operation.addParametersItem(OASGenUtils.generateParameter(
                             "id", "logical identifier", "string", "path", true));
                     idPath.setPut(operation);
                     break;
@@ -233,7 +233,7 @@ public class OASGenerator {
                             interaction.getKey() + " " + apiDefinition.getResourceType() + " operation successful");
                     patchResponses.addApiResponse("200", patchSuccessResponse);
                     operation.setResponses(patchResponses);
-                    operation.addParametersItem(R4OASGenUtils.generateParameter(
+                    operation.addParametersItem(OASGenUtils.generateParameter(
                             "id", "logical identifier", "string", "path", true));
                     idPath.setPatch(operation);
                     break;
@@ -250,7 +250,7 @@ public class OASGenerator {
                             interaction.getKey() + " " + apiDefinition.getResourceType() + " operation successful");
                     deleteResponses.addApiResponse("204", deleteSuccessResponse);
                     operation.setResponses(deleteResponses);
-                    operation.addParametersItem(R4OASGenUtils.generateParameter(
+                    operation.addParametersItem(OASGenUtils.generateParameter(
                             "id", "logical identifier", "string", "path", true));
                     idPath.setDelete(operation);
                     break;
