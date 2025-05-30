@@ -23,7 +23,12 @@ import org.wso2.healthcare.codegen.tool.framework.fhir.core.util.CardinalityType
 
 import java.util.List;
 
-// S = StructureDefinition
+/**
+ This is the generic class for all FHIR data type definitions irrespective of FHIR version.
+ It is parameterized with the following types:
+    @s - StructureDefinition
+    @e - Extension
+ */
 public interface FHIRDataTypeDef <S, E> extends SpecModel {
     S getDefinition();
 

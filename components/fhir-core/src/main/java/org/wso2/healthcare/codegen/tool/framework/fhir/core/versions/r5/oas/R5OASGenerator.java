@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 package org.wso2.healthcare.codegen.tool.framework.fhir.core.versions.r5.oas;
 
 import io.swagger.v3.oas.models.Operation;
@@ -21,6 +39,9 @@ import org.wso2.healthcare.codegen.tool.framework.fhir.core.versions.r5.common.F
 
 import java.util.*;
 
+/**
+ * This class generates OAS definitions, specifically R5 FHIR resources, inheriting from OASGenerator.
+ */
 public class R5OASGenerator extends OASGenerator {
     private static final R5OASGenerator OAS_GENERATOR_INSTANCE = new R5OASGenerator();
 
@@ -32,6 +53,13 @@ public class R5OASGenerator extends OASGenerator {
         return OAS_GENERATOR_INSTANCE;
     }
 
+    /**
+     * Generates OAS definition for a given FHIR resource definition.
+     *
+     * @param apiDefinition       API definition object
+     * @param structureDefinition FHIR resource definition
+     * @return Generated OAS definition
+     */
     public OpenAPI generateResourceSchema(APIDefinition apiDefinition, StructureDefinition structureDefinition) throws CodeGenException {
         OpenAPI resourceOAS = new OpenAPI();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org).
+ * Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org).
  *
  * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class holds FHIR Search Parameter definition model.
+ * This class holds FHIR R4 Search Parameter definition model.
  */
 public class FHIRR4SearchParamDef implements FHIRSearchParamDef <SearchParameter> {
 

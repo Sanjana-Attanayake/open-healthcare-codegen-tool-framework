@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org).
+ * Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org).
  *
  * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -29,7 +29,7 @@ import org.wso2.healthcare.codegen.tool.framework.fhir.core.util.DefKind;
 import java.util.List;
 
 /**
- * This class holds FHIR data type definition model for the FHIR tool lib.
+ * This class holds FHIR R4 data type definition model for the FHIR tool lib.
  */
 public class FHIRR4DataTypeDef implements FHIRDataTypeDef<StructureDefinition, Extension> {
     //TODO: filter the data type elements with element.id, element.extension filtered out
